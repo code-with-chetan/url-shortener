@@ -1,0 +1,123 @@
+/* Reset and global setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #8e9eab, #eef2f3);
+}
+
+/* Center everything in the viewport */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container */
+.container {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Heading styles */
+.container h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.container h2 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #555;
+}
+
+input[type="url"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.4);
+}
+
+/* Button styling */
+button {
+  background: #4a90e2;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #357ab8;
+}
+
+/* Shortened URLs list */
+#shortened-urls {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+#shortened-urls li {
+  background: #f4f6f8;
+  margin-bottom: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border-left: 4px solid #4a90e2;
+  word-wrap: break-word;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
