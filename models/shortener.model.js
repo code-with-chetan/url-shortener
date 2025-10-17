@@ -1,21 +1,17 @@
-import { readFile, writeFile } from "fs/promises";
-import { join } from "path";
+import { dbClients } from "../config/db-clients.js";
+import { env } from "../config/env.js";
 
-const DATA_FILE = join("data", "links.json");
+const db = dbClients.db(env.MONGODB_DATABASE_NAME);
+const shortenerCollections = db.collection("shorteners");
 
 export const shortLinks = async () => {
-  try {
-    const data = await readFile(DATA_FILE, "utf-8");
-    return JSON.parse(data);
-  } catch (error) {
-    if (error.code === "ENOENT") {
-      await writeFile(DATA_FILE, JSON.stringify({}));
-      return {};
-    }
-    throw error;
-  }
+  return shortenerCollections.find().toArray();
 };
 
 export const saveLinks = async (links) => {
-  await writeFile(DATA_FILE, JSON.stringify(links));
+  return shortenerCollections.insertOne(links);
+};
+
+export const getLinkByShortCode = async (shortCode) => {
+  return await shortenerCollections.findOne({ shortCode: shortCode });
 };
