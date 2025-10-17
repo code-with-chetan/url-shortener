@@ -34,6 +34,7 @@ export const postShortLinks = async (req, res) => {
   }
 };
 
+//function that handle the redirection.
 export const redirectToLink = async (req, res) => {
   try {
     const { shortCode } = req.params;
