@@ -1,6 +1,7 @@
 import { dbClients } from "../config/db-clients.js";
 import { env } from "../config/env.js";
 
+//creating database and making collections.
 const db = dbClients.db(env.MONGODB_DATABASE_NAME);
 const shortenerCollections = db.collection("shorteners");
 
