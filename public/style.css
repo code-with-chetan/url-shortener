@@ -11,7 +11,6 @@ body {
   background: linear-gradient(to right, #8e9eab, #eef2f3);
 }
 
-/* Center everything in the viewport */
 body {
   display: flex;
   justify-content: center;
